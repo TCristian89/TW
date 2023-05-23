@@ -1,89 +1,77 @@
 body {
-  --inaltime-meniu: 3rem;
-  --culoare-hover-butoane: rgba(114, 167, 145, 0.93);
-  --culoare-butoane: #2B97A3;
- --culoare-neagra:black;
+  --inaltime-meniu:3rem;
+  --culoare-hover-butoane:rgba(114, 167, 145, 0.93);
+  --culoare-butoane:#2B97A3;
+  --culoare-neagra:black;
 }
 
 nav {
+  width: 100%;
   top: 0;
- 
 }
 nav ul.meniu {
   display: flex;
-  
 }
-
-nav ul.meniu > li:hover > ul {
-  display: block;
+nav ul.meniu > a {
+  font-size: 1.3rem;
+  transition: font-size 1s;
 }
-ul.meniu ul {
+nav ul.meniu ul {
   display: none;
   position: absolute;
   width: 100%;
 }
-ul.meniu li {
+nav ul.meniu li {
   text-align: center;
   background: var(--culoare-butoane);
   cursor: pointer;
   transition: background 700ms linear;
 }
-ul.meniu li a {
+nav ul.meniu li .submeniu li {
+  position: relative;
+}
+nav ul.meniu li .submeniu li::before, nav ul.meniu li .submeniu li::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to right, white, black);
+  transition: height 1s;
+  height: 0;
+  width: 5px;
+}
+nav ul.meniu li .submeniu li::before:hover > a, nav ul.meniu li .submeniu li::after:hover > a {
+  font-size: 1.3rem;
+  transition: font-size 1s;
+}
+nav ul.meniu li .submeniu li::before {
+  left: 0px;
+}
+nav ul.meniu li .submeniu li::after {
+  right: 0px;
+}
+nav ul.meniu li .submeniu li:hover::before, nav ul.meniu li .submeniu li:hover::after {
+  height: 100%;
+}
+nav ul.meniu li a {
   text-decoration: none;
   color: var(--cl-text);
-	display:contents;
+  display: contents;
   font-weight: bold;
   line-height: var(--inaltime-meniu);
   border: 1px solid black;
 }
-nav{
-  width:100%;
-}
-
 nav ul.meniu > li {
   width: 100%;
   position: relative;
   border: solid black 1px;
 }
-ul.meniu li a:hover {
-  background: var(--cl-marcare);
-}
-.submeniu li::before,
-.submeniu li::after {
-  content: '';
-  position: absolute;
-  background: linear-gradient(to right, white, black); /* Gradient from white to black */
-  transition: height 1s; /* Transition duration for height animation */
-  height: 0; /* Initial height set to 0 */
-  width: 5px; /* Width of the bars */
-}
-.submeniu li::before {
-  left: 0px; /* Position of the left bar */
+nav ul.meniu > li:hover > ul {
+  display: block;
 }
 
-.submeniu li::after {
-  right: 0px; /* Position of the right bar */
-}
-
-.submeniu li:hover::before,
-.submeniu li:hover::after {
-  height: 100%; /* Height set to match the button's height */
-}
-.submeniu li {
-  position: relative;
-}
-.principal:hover>a{
-  font-size:1.3rem;
-  transition:font-size 1s;
-}
-nav ul.meniu li:hover {
-  background-color: var(--culoare-hover-butoane);
-}
-#container{
-  width:100%;
-  height:30px;
-  background-color:var(--culoare-butoane);
-
+#container {
+  width: 100%;
+  height: 30px;
+  background-color: var(--culoare-butoane);
 }
 
 #line {
@@ -91,72 +79,65 @@ nav ul.meniu li:hover {
   height: 4px;
   background-color: #000;
   margin: 5px;
-} 
-
+}
 
 @media screen and (min-width: 1100px) {
-  #line{
+  #line {
     display: none;
   }
 }
-
-@media screen and (max-width: 1099px) and (min-width: 750px){
-  ul li span, #line{
+@media screen and (max-width: 1099px) and (min-width: 750px) {
+  ul li span, #line {
     display: none;
+  }
 }
-}
-
-@media screen and (max-width:749px){
-  ul li span{
+@media screen and (max-width: 749px) {
+  ul li span {
     display: none;
-}
-
-#line {
-  
-  animation: appearance 2s;
-}
-@keyframes appearance {
-  0% {
-    transform: scale(3);
-    background-color: red;
-    opacity: 0.3;
-    border-radius: 30%;
   }
-  50% {
-    transform: scale(2);
-    background-color: blue;
-    opacity: 0.7;
-    border-radius: 60%;
+  #line {
+    animation: appearance 2s;
   }
-  100% {
-    transform: scale(1);
-    background-color: rgb(19, 140, 19);
-    opacity: 1;
-    border-radius: 90%;
+  @keyframes appearance {
+    0% {
+      transform: scale(3);
+      background-color: red;
+      opacity: 0.3;
+      border-radius: 30%;
+    }
+    50% {
+      transform: scale(2);
+      background-color: blue;
+      opacity: 0.7;
+      border-radius: 60%;
+    }
+    100% {
+      transform: scale(1);
+      background-color: rgb(19, 140, 19);
+      opacity: 1;
+      border-radius: 90%;
+    }
   }
-}
-nav{
-  display: none; 
-}
-#container:hover #nav {
-    display:block;
-    transform-origin: 0% 50%;
-    animation:scale 1s
-    
+  nav {
+    display: none;
   }
-   ul {
-    display:list-item;
+  nav ul {
+    display: list-item;
     flex-direction: column;
-
-
   }
-  @keyframes scale{
-    0%{
-      transform:scaleX(0);
+  #container:hover #nav {
+    display: block;
+    transform-origin: 0% 50%;
+    animation: scale 1s;
+  }
+  @keyframes scale {
+    0% {
+      transform: scaleX(0);
     }
-    100%{
-      transform:scaleX(1);
+    100% {
+      transform: scaleX(1);
     }
   }
-  
 }
+
+/*# sourceMappingURL=meniu.css.map */
