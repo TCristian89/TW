@@ -1,0 +1,214 @@
+@media print{
+banner{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50%;
+    border-style:  solid double;
+    text-align: center;
+}
+ html{
+   
+    --padding:4%;
+    --s:2px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+}
+body{
+    padding:var(--padding);
+}
+
+.titlu{
+    display:flex; 
+    align-items: center;
+    padding-left:20%;
+  
+}
+h1{
+   
+    font-size:4rem;
+
+
+}
+nav{
+    page-break-after:always;
+    
+}
+nav ul.meniu li a, nav ul.meniu li div{display:list-item}
+header input{
+    
+  display:none;
+}
+
+#w1{display:flex;
+    text-align: justify;
+    flex-direction: row;
+    
+}
+#w1 p{
+    align-items: center;
+    padding:var(--padding)
+}
+#w1 img{
+    width:25rem;
+    height:13rem;
+    padding-right: var(--padding);
+}
+#welcome h2{
+    padding-left: var(--padding);
+}
+
+#w2{display:flex;
+    text-align: justify;
+    flex-direction: row;
+    padding-top:var(--padding);
+    height:19rem;
+}
+#w2 div{
+    padding:var(--padding);
+}
+#w2 img{
+    width:25rem;
+    padding-left:var(--padding);
+}
+#welcome{
+    grid-area: z-welcome;
+    
+}
+#tabel{
+    grid-area: z-tabel;
+}
+#calendar{
+    grid-area: z-calendar;
+    
+}
+
+
+#anunturi{
+    grid-area: z-anunturi;
+}
+#utilizatori{
+    grid-area:z-utilizatori
+}
+#date-utilizator{
+    grid-area:z-date-utilizator
+}
+#date{
+    grid-area: z-date;
+}
+
+#iframe{
+    grid-area:z-iframe
+}
+#intrebari{
+    grid-area:z-intrebari;
+    justify-content: center;
+}
+
+#grid{
+    display: block;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "z-welcome z-welcome  z-welcome "
+                        "z-calendar z-tabel  z-anunturi"
+                        "z-iframe z-iframe  z-intrebari "
+                        "z-utilizatori z-date-utilizator z-date";
+                                 
+}
+#grid >*{
+    outline: 0.1rem solid orange;
+    text-align: center;
+
+}
+#calendar li{
+    list-style-type: none
+}
+figure img{
+    width:100%;
+}
+
+caption{
+    caption-side: bottom;
+}
+table{
+  
+  
+    margin: auto;
+    width: 90%;
+    
+}
+
+
+      table, th, td,tr {
+        border-spacing:var(--s) var(--s);
+      }
+
+
+footer{
+    height: 150px;
+    page-break-before:always;
+}
+
+footer a:link{
+    text-decoration:none;
+    color:var(--text2);
+}
+footer a:visited{
+   color:var(--text2);
+   text-decoration: none;
+   
+}
+#intrebari a,figure a{
+    color:var(--culoare-evidentieri);
+
+}
+img,picture, #link-top,#iframe{
+    display:none;
+     }
+     a{
+        color:black;
+        text-decoration: none;
+     }
+#watermark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+  width:60%;
+  height: 10%;
+   border:solid black;
+   left:20%;
+   opacity: 0.3;
+}
+#watermark::after{
+  
+    display:block;
+    content:'Țîrlea \A Cristian';
+    white-space: pre;
+   text-align: center;
+   
+}
+#iframe h2{
+    display: none;
+}
+@page{
+    size:A4 portrait;
+}
+@page:left{
+    margin-left:2cm;
+    margin-right:1cm;
+}
+@page:right{
+    margin-left:1cm;
+    margin-right:2cm;
+}
+
+#nav *,#meniu *{
+    all: revert; 
+}
+#fa{
+    display: none;
+}
+
+}
