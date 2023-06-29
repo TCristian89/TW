@@ -1,0 +1,27 @@
+body{
+    padding:var(--padding);
+  }
+  .titlu{
+    display:flex; 
+    align-items: center;
+    padding-left:20%;
+  
+  }
+  h1{
+    color:var(--culoare-tabel1);
+    font-size:4rem;
+  
+  
+  }
+  header input{
+    
+    height: 2rem;
+    width:19rem;
+    border-radius: 1.9rem;
+    margin:auto;
+   
+  
+  }
+  header span{
+    color:var(--culoare-butoane);
+  }

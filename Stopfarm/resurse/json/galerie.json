@@ -1,0 +1,80 @@
+{
+	"cale_galerie":"resurse/poze/galerie",
+	"imagini": [
+		{
+			"cale":"A.webp",
+			"titlu":"Vitamina A",
+            "descriere":"Vitamina A",
+			"sfert":3
+		},
+		{
+			"cale":"B.webp",
+			"titlu":"Vitamina B",
+            "descriere":"Vitamina B",
+			"sfert":3
+			
+		},
+		{
+			"cale":"B3.webp",
+			"titlu":"Vitamina B3",
+            "descriere":"Vitamina B3",
+			"sfert":3
+		},
+		{
+			"cale":"B6.webp",
+			"titlu":"Vitamina B6",
+            "descriere":"Vitamina B6",
+			"sfert":3
+		},
+		{
+			"cale":"B9.webp",
+			"titlu":"Vitamina B9",
+            "descriere":"Vitamina B9",
+			"sfert":3
+		},
+		{
+			"cale":"C.webp",
+			"titlu":"Vitamina C ",
+            "descriere":"Vitamina C",
+			"sfert":3
+		},
+		{
+			"cale":"Ca.webp",
+			"titlu":"Calciu",
+            "descriere":"Calciu",
+			"sfert":3
+		},
+		{
+			"cale":"D.webp",
+			"titlu":"Vitamina D",
+            "descriere":"Vitamina D",
+			"sfert":3
+		},
+		{
+			"cale":"E.webp",
+			"titlu":"Vitamina E",
+            "descriere":"Vitamina E",
+			"sfert":3
+		},
+		{
+			"cale":"K.webp",
+			"titlu":"Vitamina K",
+            "descriere":"Vitamina K",
+			"sfert":3
+		},
+		{
+			"cale":"Mg.webp",
+			"titlu":"Magneziu",
+            "descriere":"Magneziu",
+			"sfert":3
+		},
+		{
+			"cale":"Zn.webp",
+			"titlu":"Zinc",
+            "descriere":"Zinc",
+			"sfert":3
+		}
+
+		
+	]
+}

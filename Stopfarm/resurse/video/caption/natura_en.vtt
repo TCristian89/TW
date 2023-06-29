@@ -1,0 +1,24 @@
+WEBVTT - Some title
+
+STYLE
+
+STYLE
+::cue {
+  background-color:rgba(255, 255, 255, 0.5);
+  color:black;
+}
+
+
+
+unu
+00:00.000 --> 00:03.000 position:50% align:center line:6
+<c>Healthy life</c>
+
+00:04.000 --> 00:14.000 line:0
+For a healthy life consume 
+
+00:08.000 --> 00:14.000 line:1
+at least 2 liters of 
+
+00:10.000 --> 00:14.000 line:2
+water daily!

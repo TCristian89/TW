@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+ 
+
+<head>
+  <%- include("../fragmente/title.ejs") %>
+
+  <!-- CSS reset -->
+  <%- include("../fragmente/reset.ejs") %>
+  <!-- favicon-->
+  <%- include("../fragmente/favicon.ejs") %>
+
+<!-- css -->
+
+
+<link rel="stylesheet" href="/resurse/css/print.css" media="print">
+<link rel="stylesheet" href="/resurse/css/meniu.css" type="text/css">
+<link rel="stylesheet" href="/resurse/css/footer.css" type="text/css">
+<link rel="stylesheet" href="/resurse/css/despre_noi.css" type="text/css">
+<link rel="stylesheet" href="/resurse/css/title.css" type="text/css">
+<!-- font google api -->
+<%- include("../fragmente/font.ejs") %>
+</head>
+<%- include("../fragmente/header.ejs") %>
+<body>
+    <main>
+      <div id="grid">
+    <section id="despre_noi">
+     
+      <p ><strong>Bine ați venit la Farmacia Stopfarm!Suntem o farmacie dedicată sănătății și bunăstării dumneavoastră.</strong></p>
+    </section>
+    <section id="servicii_oferite">
+        
+      <h2 >Printre serviciile oferite de noi regăsiți:</h2>
+        
+      <ul >
+        <br>
+        <li >Vânzare de medicamente și produse farmaceutice</li>
+        <li>Consiliere farmaceutică specializată</li>
+        <li>Măsurători de tensiune arterială</li>
+        <li>Teste de glicemie</li>
+        <li>Comenzi online și livrare la domiciliu</li>
+      </ul>
+    </section> 
+    <section id="orar" >
+       
+      <h2 >Orar de funcționare</h2><BR>
+      <table >
+        <tr>
+          <th>Ziua</th>
+          <th>Orar</th>
+        </tr>
+        <tr>
+          <td>Luni - Vineri</td>
+          <td>08:00 - 20:00</td>
+        </tr>
+        <tr>
+          <td>Sâmbătă</td>
+          <td>09:00 - 18:00</td>
+        </tr>
+        <tr>
+          <td>Duminică</td>
+          <td>Închis</td>
+        </tr>
+      </table>
+    </section>
+   
+    <section id="video">
+        <video controls preload="metadata" style="width:80%;min-width:100px; max-width:900px" poster="/resurse/poze/natura.jpg">
+          <source src="resurse/video/natura.mp4" type="video/mp4">
+          <source src="resurse/video/natura.ogv" type="video/ogv">
+                <!--<track  src="data:image/png;base64, V0VCVlRUIC0gU29tZSB0aXRsZQoKMDA6MDAuMDAwIC0tPiAwMDowMy4wMDAKbyBzxIMgcHJpbmQgbXVsyJtpIMiZb2FyZWNpIS4uLi4uCgowMDowMy4wMDAgLS0+IDAwOjA3LjAwMAp1bmRlIHBsZWNhdGksIG3Eg8SDxIPEg8SDxIM/IS4uLi4KCjAwOjA5LjAwMCAtLT4gMDA6MTQuMDAwCkNoacibISBDaGnImyEgQ2hpyJshIENoacibISAKCjAwOjE0LjUwMCAtLT4gMDA6MTkuMDAwCk1pYXUhIERlemFtxINnaXJlLi4uLgoK" kind="captions" srclang="ro" label="romana" />-->
+    
+          <track  src="resurse/video/caption/natura.vtt" kind="captions" srclang="ro" label="romană" />
+                
+          <track  default src="resurse/video/caption/natura_en.vtt" kind="captions" srclang="en" label="engleză" />
+        </video>
+      </section>
+    </div>
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+  
+</main>  
+
+   <%- include("../fragmente/footer.ejs") %>
+
+</body>
+</html>

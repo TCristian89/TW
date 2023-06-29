@@ -1,0 +1,47 @@
+html{
+--text2:white;
+--culoare-footer:#283142;
+}
+footer{
+    background-color:var(--culoare-footer);
+    height: 150px;
+    color:var(--text2)
+}
+
+footer a:link,footer a:visited{
+    text-decoration:none;
+    color:var(--text2);
+}
+#romb{
+    display:block;
+    width:4rem;
+    height: 4rem;
+    z-index: 2;
+   border: 0.3rem solid var(--culoare-butoane);
+    rotate: 45deg;
+    position: fixed;
+    bottom: 2rem;
+    right: 5.5rem;
+   opacity: 30%;
+   transition: 0.7s;
+ }
+ #con{
+
+  width: 0;
+  height: 0;
+  border-bottom: 3rem solid;
+  border-left: 1.6rem solid transparent;
+  border-right: 1.6rem solid transparent;
+  border-radius: 1.6rem;
+  rotate:-45deg;
+  color: var(--culoare-butoane);
+}
+
+
+#romb:hover{
+    background-color: var(--culoare-butoane);
+    opacity:100%
+  }
+#romb:hover #con{
+    color: var(--text2)
+}

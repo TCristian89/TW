@@ -1,0 +1,32 @@
+{
+    "cale_baza": "/resurse/poze/erori/",
+    "eroare_default":{
+        "titlu":"Eroare !!!",
+        "text": "A survenit eroare.",
+        "imagine":"interzis.png"
+    },
+    "info_erori": [
+        {
+            "identificator":404,
+            "status":true,
+            "titlu":"404 - N-am, bre!",
+            "text": "Nu-i pe serverul ăsta, sorry, caută în altă parte!",
+            "imagine":"404.png"
+        },
+        {
+            "identificator":403,
+            "status":true,
+            "titlu":"403 - Da, tu ce cauți aici?!!",
+            "text": "Ai greșit ruta. Stânga-împrejur și pa!",
+            "imagine":"403.png"
+        },
+
+        {
+            "identificator":400,
+            "status":true,
+            "titlu":"400 - Bad request",
+            "text": "Ai greșit ruta. Stânga-împrejur și pa!",
+            "imagine":"400.png"
+        }
+    ]
+}

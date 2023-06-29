@@ -1,0 +1,154 @@
+html{
+    background-color:#e2e2e2 ;
+    transition: font-size 1s ease-in-out;
+
+    
+    --text1:black;
+    --text2:white;
+    --culoare-footer:#283142;
+    --culoare-butoane:#2B97A3 ;
+    --culoare-hover:aliceblue;
+    --culoare-evidentieri:red;
+    --culoare-grid:orange;
+    --culoare-tabel1: rgba(114, 167, 145, 0.93);
+    --culoare-tabel2:rgba(6, 221, 132, 0.93);
+    --math:rgb(48, 117, 2);
+    --padding:4%;
+    --s:2px;
+
+    
+    font-size-adjust: auto;
+    --tranzitie:2s;
+    color:var(--culoare-scris);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+}
+body{
+    padding:var(--padding);
+}
+.titlu{
+    display:flex; 
+
+    padding-left:20%;
+  
+}
+h1{
+    color:var(--culoare-tabel1);
+    font-size:4rem;
+    right:0px;
+
+}
+tr:nth-child(even){
+    background-color:var(--culoare-tabel1);
+    transition:background-color var(--tranzitie);
+   }
+  tbody tr:nth-child(odd){
+    background-color:var(--culoare-butoane);
+    transition:var(--tranzitie);
+   }
+   tr:nth-child(even):hover{
+    background-color:var(--culoare-tabel2);
+   }
+  tbody tr:nth-child(odd):hover{
+    background-color:var(--culoare-hover);
+   }
+   table{
+  
+  
+    margin: auto;
+    width: 90%;
+    
+}
+table, th, td,tr {
+        border:  solid var(--culoare-footer);
+        border-spacing:var(--s) var(--s);
+        text-align: justify;
+      }
+section ul li{
+    text-align: justify;
+    padding-left:30px;
+}
+      #despre_noi{
+        grid-area:z-despre;
+     margin-top:5px;
+    }
+    
+#servicii_oferite{
+    grid-area:z-servicii;
+  
+}
+#orar{
+    grid-area:z-orar;
+   
+}
+#video{
+    grid-area:z-video;
+    
+}
+  
+
+    @media screen and (min-width: 1100px) {
+  #grid{
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-areas: "z-despre  z-video "
+                                "z-servicii z-video " 
+                                "z-orar z-video ";
+            padding-top: 40px;       
+            padding-bottom: 40px;                     
+        }
+    
+    #grid >*{
+          
+            text-align: center;
+        
+        }
+      }
+      @media screen and (max-width: 1099px) and (min-width: 750px) {
+        #grid{
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-areas: "z-despre  z-video "
+                                "z-servicii z-video " 
+                                "z-orar z-video ";
+            padding-top: 40px;
+            padding-bottom: 10px;                              
+        }
+    video{
+        height: 100%;
+    }
+    #grid >*{
+           
+            text-align: center;
+        
+        }
+      }
+      @media screen and (max-width: 749px) {
+        #grid{
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(1fr);
+            grid-template-areas: "z-despre  "
+                                "z-servicii  " 
+                                "z-orar "
+                                "z-video";
+            padding-top: 10px;
+            padding-bottom: 10px;                                
+        }
+    
+    #grid >*{
+           
+            text-align: center;
+        
+        
+        }
+ 
+      }
+      p{color:red;
+    font-size: 20px;}
+      h2{
+        color:darkgreen;
+        font-size: 20px;
+      }

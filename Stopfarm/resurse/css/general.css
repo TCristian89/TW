@@ -26,6 +26,7 @@ html{
 body{
     padding:var(--padding);
 }
+
 .titlu{
     display:flex; 
 
@@ -114,16 +115,14 @@ header input{
 #date{
     grid-area: z-date;
 }
-
+#galerie{
+    grid-area:z-galerie;
+}
 #iframe{
     grid-area:z-iframe
 }
 #iframe h2{
     display: none;
-}
-#intrebari{
-    grid-area:z-intrebari;
-    justify-content: center;
 }
 
 
@@ -134,8 +133,9 @@ header input{
     grid-template-areas: "z-welcome z-welcome  z-welcome "
                         "z-calendar z-tabel  z-anunturi"
                         "z-iframe z-iframe  z-intrebari "
+                        "z-galerie z-galerie z-galerie"
                         "z-utilizatori z-date-utilizator z-date";
-                                 
+    padding-bottom: var(--padding);                
 }
 #grid >*{
     outline: 0.1rem solid orange;
@@ -164,7 +164,7 @@ figure img{
     flex-direction: column;
     align-items: flex-start;
     width: 6rem;
-    height: 3rem;
+    height: 4rem;
      background-color:var(--culoare-butoane);
    color:var(--culoare-scris);
      text-decoration: none;
@@ -178,7 +178,7 @@ figure img{
    .taburi-iframe a:hover{
     /* adăugăm un spațiu între butoane */
     width: 8rem;
-    height: 3rem;
+    height: 4rem;
     background-color:var(--culoare-hover);
    }
    tr:nth-child(even){
@@ -243,16 +243,6 @@ table, th, td,tr {
 #romb:hover #con{
     color: var(--text2)
 }
-footer{
-    background-color:var(--culoare-footer);
-    height: 150px;
-    color:var(--text2)
-}
-
-footer a:link,footer a:visited{
-    text-decoration:none;
-    color:var(--text2);
-}
 
 #intrebari a{
     color:var(--culoare-evidentieri);
@@ -270,3 +260,97 @@ figure a{
   h3 math{
     color:var(--math);
 }
+ a:visited{
+    color:var(--culoare-grid);
+}
+a[href^="http"]::before {
+    content: "⮳";
+    font-size: 150%;
+    align-items: center;
+  }
+a:hover{color:#2B97A3;}
+
+a {
+    
+background-image: radial-gradient(circle,green 0%,  green 40%, transparent 80%, transparent 100%);
+   background-position: center;
+   background-size:0%;
+   transition: background-size 1s;
+  }
+  
+  a:hover{
+    background-size: 100%;
+  }
+  a:active {
+    border: 2px solid red; 
+    transition: background-size 3s;
+
+  }
+
+#galerie{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 0.5em;
+    grid-column-gap: 0.5em;
+    grid-template-areas:
+    "fiu1 fiu2 fiu3"
+    "fiu4 . fiu5"
+    "fiu6 . fiu7"
+    "fiu8 fiu9 fiu10";
+
+}
+#galerie{
+    counter-reset:nrimag 0;
+}
+#galerie figcaption{
+    counter-increment: nrimag 1;
+}
+#galerie figcaption::before{
+    content:counter(nrimag,upper-roman) ") ";
+
+}
+#galerie>figure:nth-child(1){
+    grid-area:fiu1;
+}
+
+#galerie>figure:nth-child(2){
+    grid-area:fiu2;
+}
+#galerie>figure:nth-child(3){
+    grid-area:fiu3;
+}
+#galerie>figure:nth-child(4){
+    grid-area:fiu4;
+}
+
+#galerie>figure:nth-child(5){
+    grid-area:fiu5;
+}
+
+#galerie>figure:nth-child(6){
+    grid-area:fiu6;
+}
+
+#galerie>figure:nth-child(7){
+    grid-area:fiu7;
+}
+
+#galerie>figure:nth-child(8){
+    grid-area:fiu8;
+}
+
+#galerie>figure:nth-child(9){
+    grid-area:fiu9;
+}
+
+#galerie>figure:nth-child(10){
+    grid-area:fiu10;
+}
+
+#galerie > figure:hover img {
+    transform: scale(1.25) rotate(-10deg);
+    border: 4px solid;
+    transition: transform 1.2s, border-width 1.2s;
+}
+
+

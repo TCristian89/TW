@@ -1,0 +1,301 @@
+html{
+    background-color:#e2e2e2 ;
+    transition: font-size 1s ease-in-out;
+    --text1:black;
+    --text2:white;
+    --culoare-footer:#283142;
+    --culoare-butoane:#2B97A3 ;
+    --culoare-hover:aliceblue;
+    --culoare-evidentieri:red;
+    --culoare-grid:orange;
+    --culoare-tabel1: rgba(114, 167, 145, 0.93);
+    --culoare-tabel2:rgba(6, 221, 132, 0.93);
+    --s:2px;
+    --math:rgb(48, 117, 2);
+    --padding:2%;
+    --tranzitie:2s;
+    color:var(--culoare-scris);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    font-size-adjust: auto;
+}
+
+#w1{display:flex;
+    text-align: justify;
+    flex-direction: row;
+    
+}
+#w1 p{
+    align-items: center;
+    padding:var(--padding);
+}
+#w1 img{
+    width:25rem;
+    height:13rem;
+    padding-right: var(--padding);
+}
+#welcome h2{
+    padding-left: var(--padding);
+    text-align: left;
+    padding-top:var(--padding);
+}
+#w2{display:flex;
+    text-align: justify;
+    flex-direction: row;
+    padding-top:var(--padding);
+    height:19rem;
+}
+#w2 div{
+    padding:var(--padding);
+}
+#w2 img{
+    width:25rem;
+    padding-left:var(--padding);
+}
+#welcome{
+    grid-area: z-welcome;
+    margin-top: 2rem;
+}
+#tabel{
+    grid-area: z-tabel;
+}
+#calendar{
+    grid-area: z-calendar;
+    
+}
+
+
+#anunturi{
+    grid-area: z-anunturi;
+}
+#utilizatori{
+    grid-area:z-utilizatori
+}
+#date-utilizator{
+    grid-area:z-date-utilizator
+}
+#date{
+    grid-area: z-date;
+}
+
+#iframe{
+    grid-area:z-iframe
+}
+#iframe h2{
+    display: none;
+}
+#intrebari{
+    grid-area:z-intrebari
+}
+#galerie{
+    grid-area:z-galerie;
+}
+#grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "z-welcome z-welcome"
+                        "z-calendar z-tabel"
+                        "z-iframe z-iframe"
+                        "z-galerie z-galerie"
+                        "z-intrebari z-utilizatori"
+                        "z-date-utilizator z-date"
+                        "z-anunturi z-anunturi";
+                                      
+}
+#grid >*{
+    outline: 0.1rem solid orange;
+    text-align: center;
+
+}
+#calendar li{
+    list-style-type: none
+}
+figure img{
+    width:100%;
+}
+
+
+
+
+#iframe {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+  .taburi-iframe a {
+    /* adăugăm un spațiu între butoane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 6rem;
+    height: 3rem;
+     background-color:var(--culoare-butoane);
+   color:var(--culoare-scris);
+     text-decoration: none;
+     border-top-right-radius:0.3rem;
+     border-bottom-right-radius: 0.3rem;
+     transition: width var(--tranzitie);
+     border:0.3rem;
+     border-color: var(--culoare-footer);
+     border-style:  solid double;
+   }
+   .taburi-iframe a:hover{
+    /* adăugăm un spațiu între butoane */
+    width: 8rem;
+    height: 3rem;
+    background-color:var(--culoare-hover);
+   }
+   tr:nth-child(even){
+    background-color:var(--culoare-tabel1);
+    transition:background-color var(--tranzitie);
+   }
+  tbody tr:nth-child(odd){
+    background-color:var(--culoare-butoane);
+    transition:background-color var(--tranzitie);
+   }
+   tr:nth-child(even):hover{
+    background-color:var(--culoare-tabel2);
+   }
+  tbody tr:nth-child(odd):hover{
+    background-color:var(--culoare-hover);
+   }
+caption{
+    caption-side: bottom;
+}
+table{
+  
+    text-align: center;
+    margin: auto;
+    width: 90%;
+    
+}
+
+
+      table, th, td,tr {
+        border:  solid var(--culoare-footer);
+        border-spacing:var(--s) var(--s);
+      }
+
+
+#romb{
+    display:block;
+    width:4rem;
+    height: 4rem;
+    z-index: 2;
+   border: 0.3rem solid var(--culoare-butoane);
+    rotate: 45deg;
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+   opacity: 30%;
+   transition: 0.7s;
+ }
+ #con{
+
+  width: 0;
+  height: 0;
+  border-bottom: 3rem solid;
+  border-left: 1.6rem solid transparent;
+  border-right: 1.6rem solid transparent;
+  border-radius: 1.6rem;
+  rotate:-45deg;
+  color: var(--culoare-butoane);
+}
+
+
+#romb:hover{
+    background-color: var(--culoare-butoane);
+    opacity:100%
+  }
+#romb:hover #con{
+    color: var(--text2)
+}
+
+#intrebari a{
+    color:var(--culoare-evidentieri);
+
+}
+figure a{
+    color:var(--culoare-evidentieri);
+}
+#tabelProgram {
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x:scroll
+  }
+
+  h3 math{
+    color:var(--math);
+}
+#galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 0.5em;
+    grid-column-gap: 0.5em;
+    grid-template-areas:
+        "fiu1 fiu2"
+        "fiu3 fiu4"
+        "fiu5 fiu6"
+        "fiu7 fiu8"
+        "fiu9 fiu10";
+    
+}
+#galerie{
+    counter-reset:nrimag 0;
+   
+
+}
+#galerie figcaption{
+    counter-increment: nrimag 1;
+}
+
+#galerie figcaption::before{
+    content:counter(nrimag,upper-roman) ") ";
+
+}
+#galerie>figure:nth-child(1){
+    grid-area:fiu1;
+}
+
+#galerie>figure:nth-child(2){
+    grid-area:fiu2;
+}
+#galerie>figure:nth-child(3){
+    grid-area:fiu3;
+}
+#galerie>figure:nth-child(4){
+    grid-area:fiu4;
+}
+
+#galerie>figure:nth-child(5){
+    grid-area:fiu5;
+}
+
+#galerie>figure:nth-child(6){
+    grid-area:fiu6;
+}
+
+#galerie>figure:nth-child(7){
+    grid-area:fiu7;
+}
+
+#galerie>figure:nth-child(8){
+    grid-area:fiu8;
+}
+
+#galerie>figure:nth-child(9){
+    grid-area:fiu9;
+}
+
+#galerie>figure:nth-child(10){
+    grid-area:fiu10;
+}
+#galerie > figure:hover img {
+    transform: scale(1.25) rotate(-10deg);
+    border: 4px solid;
+    transition: transform 1.2s, border-width 1.2s;
+}
+
+
+

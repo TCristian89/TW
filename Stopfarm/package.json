@@ -1,0 +1,32 @@
+{
+  "name": "stopfarm",
+  "version": "1.0.0",
+  "description": "Farmacie online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ieftin",
+    "preț",
+    "mic",
+    "farmacie",
+    "online",
+    "reduceri",
+    "promoții",
+    "medicamente",
+    "stop",
+    "preturi",
+    "oferte",
+    "discount"
+  ],
+  "author": "Tirlea Cristian",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "node.js": "^0.0.1-security",
+    "nodemon": "^2.0.22",
+    "sharp": "^0.32.1"
+  }
+}

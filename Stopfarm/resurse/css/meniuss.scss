@@ -1,0 +1,277 @@
+body {
+  --inaltime-meniu: 3rem;
+  --culoare-hover-butoane: rgba(114, 167, 145, 0.93);
+  --culoare-butoane: #2b97a3;
+}
+
+nav {
+  height: var(--inaltime-meniu);
+  width: 100%;
+  top: 0;
+  background-color: var(--culoare-butoane);
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 0;
+    margin: 0;
+  }
+  a:active {
+    border: none;
+  }
+  ul.meniu {
+    li {
+      /*text centrat pe orizontala*/
+      text-align: center;
+
+      /*ascundem bullets*/
+      list-style-type: none;
+      background: var(--culoare-roz-inchis);
+      cursor: pointer;
+      a,
+      div {
+        text-decoration: none;
+        color: var(--cl-text);
+        display: block;
+        font-weight: bold;
+        /*inaltimea butonului si inaltimea liniei de text sunt identice 
+      pentru a centra textul pe verticala in element
+       - merge doar daca textul are o singura linie*/
+        height: var(--inaltime-meniu);
+        line-height: var(--inaltime-meniu);
+        outline: 1px solid black;
+        transition: background 700ms linear;
+        &:hover {
+          background: var(--cl-marcare);
+        }
+      }
+    }
+    ul {
+      display: none;
+      position: absolute;
+      width: 100%;
+      background-color: var(--culoare-butoane);
+    }
+    > li {
+      float: left;
+      width: 25%;
+      position: relative; /* pentru ca submeniul pozitionat relativ sa aiba ca referinta parintele li*/
+      > a:hover {
+        font-size: 1.3rem;
+        transition: font-size 1s;
+      }
+    }
+  }
+}
+
+#line {
+  width: 30px;
+  height: 4px;
+  background-color: #000;
+  margin: 5px;
+}
+
+@media screen and (min-width: 1100px) {
+  #line {
+    display: none;
+  }
+  /*deschidere submeniu*/
+  nav ul.meniu {
+    li .submeniu li {
+      position: relative;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to left, white, black);
+        transition: transform 1s;
+        width: 5px;
+        height: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+      &::before {
+        top: 0;
+        left: 0;
+      }
+      &:hover {
+        &::after,
+        &::before {
+          height: 100%;
+          transform: scaleY(1);
+        }
+      }
+    }
+    > li:hover > ul {
+      display: block;
+      animation-name: aparitie_meniu;
+      animation-duration: 1s;
+      transform-origin: 50% 0;
+    }
+  }
+  @keyframes aparitie_meniu {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform: scale(1);
+    }
+  }
+}
+@media screen and (max-width: 1099px) and (min-width: 750px) {
+  #line {
+    display: none;
+  }
+  /*deschidere submeniu*/
+  nav {
+    ul li span {
+      display: none;
+    }
+    ul {
+      &.meniu {
+        li .submeniu li {
+          position: relative;
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            background: linear-gradient(to left, white, black);
+            transition: transform 1s;
+            width: 5px;
+            height: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+          }
+          &::before {
+            top: 0;
+            left: 0;
+          }
+          &::after {
+            bottom: 0;
+            right: 0;
+          }
+        &:hover{&::after,&::before{ height: 100%;
+          transform: scaleY(1);}}
+        }
+  
+        & > li:hover > ul {
+          display: block;
+          animation-name: aparitie_meniu;
+          animation-duration: 1s;
+          transform-origin: 50% 0;
+        }
+      }
+    }
+  }
+  @keyframes aparitie_meniu {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform: scale(1);
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 749px) {
+  #container {
+    background-color: var(--culoare-butoane);
+    height: 3rem;
+    position: relative; /* Add this line */
+    z-index: 1; /* Add this line */
+    &:hover #nav {
+      display: block;
+      transform-origin: 0% 50%;
+      animation: scale 1s;
+    }
+  }
+
+  #line {
+    animation: appearance 2s;
+    align-items: center;
+  }
+  @keyframes appearance {
+    0% {
+      transform: scale(3);
+      background-color: red;
+      opacity: 0.3;
+      border-radius: 30%;
+    }
+    50% {
+      transform: scale(2);
+      background-color: blue;
+      opacity: 0.7;
+      border-radius: 60%;
+    }
+    100% {
+      transform: scale(1);
+      background-color: rgb(19, 140, 19);
+      opacity: 1;
+      border-radius: 90%;
+    }
+  }
+
+  nav {
+    display: none;
+    font-size: 0.8rem;
+    position: absolute; /* Add this line */
+    z-index: 3; /* Add this line */
+    ul {
+      &.meniu > li {
+        width: 100%;
+        &:hover > ul {
+          position: absolute; /* Add this line */
+          z-index: 2; /* Add this line */
+          width: 30%;
+          display: block;
+          animation-name: aparitie_meniu;
+          animation-duration: 1s;
+          transform-origin: 50% 0;
+        }
+      }
+      display: flex;
+      flex-direction: column;
+      background-color: var(--culoare-butoane);
+      li span {
+        display: none;
+      }
+    }
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes aparitie_meniu {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform: scale(1);
+    }
+  }
+}

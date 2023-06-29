@@ -1,77 +1,66 @@
 body {
-  --inaltime-meniu:3rem;
-  --culoare-hover-butoane:rgba(114, 167, 145, 0.93);
-  --culoare-butoane:#2B97A3;
-  --culoare-neagra:black;
+  --inaltime-meniu: 3rem;
+  --culoare-hover-butoane: rgba(114, 167, 145, 0.93);
+  --culoare-butoane: #2b97a3;
 }
 
 nav {
+  height: var(--inaltime-meniu);
   width: 100%;
   top: 0;
+  background-color: var(--culoare-butoane);
 }
-nav ul.meniu {
-  display: flex;
+nav ul {
+  padding: 0;
+  margin: 0;
 }
-nav ul.meniu > a {
-  font-size: 1.3rem;
-  transition: font-size 1s;
+nav li {
+  padding: 0;
+  margin: 0;
+}
+nav a:active {
+  border: none;
+}
+nav ul.meniu li {
+  /*text centrat pe orizontala*/
+  text-align: center;
+  /*ascundem bullets*/
+  list-style-type: none;
+  background: var(--culoare-roz-inchis);
+  cursor: pointer;
+}
+nav ul.meniu li a,
+nav ul.meniu li div {
+  text-decoration: none;
+  color: var(--cl-text);
+  display: block;
+  font-weight: bold;
+  /*inaltimea butonului si inaltimea liniei de text sunt identice 
+  pentru a centra textul pe verticala in element
+   - merge doar daca textul are o singura linie*/
+  height: var(--inaltime-meniu);
+  line-height: var(--inaltime-meniu);
+  outline: 1px solid black;
+  transition: background 700ms linear;
+}
+nav ul.meniu li a:hover,
+nav ul.meniu li div:hover {
+  background: var(--cl-marcare);
 }
 nav ul.meniu ul {
   display: none;
   position: absolute;
   width: 100%;
-}
-nav ul.meniu li {
-  text-align: center;
-  background: var(--culoare-butoane);
-  cursor: pointer;
-  transition: background 700ms linear;
-}
-nav ul.meniu li .submeniu li {
-  position: relative;
-}
-nav ul.meniu li .submeniu li::before, nav ul.meniu li .submeniu li::after {
-  content: "";
-  position: absolute;
-  background: linear-gradient(to right, white, black);
-  transition: height 1s;
-  height: 0;
-  width: 5px;
-}
-nav ul.meniu li .submeniu li::before:hover > a, nav ul.meniu li .submeniu li::after:hover > a {
-  font-size: 1.3rem;
-  transition: font-size 1s;
-}
-nav ul.meniu li .submeniu li::before {
-  left: 0px;
-}
-nav ul.meniu li .submeniu li::after {
-  right: 0px;
-}
-nav ul.meniu li .submeniu li:hover::before, nav ul.meniu li .submeniu li:hover::after {
-  height: 100%;
-}
-nav ul.meniu li a {
-  text-decoration: none;
-  color: var(--cl-text);
-  display: contents;
-  font-weight: bold;
-  line-height: var(--inaltime-meniu);
-  border: 1px solid black;
+  background-color: var(--culoare-butoane);
 }
 nav ul.meniu > li {
-  width: 100%;
-  position: relative;
-  border: solid black 1px;
+  float: left;
+  width: 25%;
+  position: relative; /* pentru ca submeniul pozitionat relativ sa aiba ca referinta parintele li*/
 }
-nav ul.meniu > li:hover > ul {
-  display: block;
-}
-
-#container {
-  width: 100%;
-  height: 30px;
-  background-color: var(--culoare-butoane);
+nav ul.meniu > li > a:hover {
+  font-size: 1.3rem;
+  transition: font-size 1s;
 }
 
 #line {
@@ -85,18 +74,114 @@ nav ul.meniu > li:hover > ul {
   #line {
     display: none;
   }
+  /*deschidere submeniu*/
+  nav ul.meniu li .submeniu li {
+    position: relative;
+  }
+  nav ul.meniu li .submeniu li::after, nav ul.meniu li .submeniu li::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to left, white, black);
+    transition: transform 1s;
+    width: 5px;
+    height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  nav ul.meniu li .submeniu li::after {
+    bottom: 0;
+    right: 0;
+  }
+  nav ul.meniu li .submeniu li::before {
+    top: 0;
+    left: 0;
+  }
+  nav ul.meniu li .submeniu li:hover::after, nav ul.meniu li .submeniu li:hover::before {
+    height: 100%;
+    transform: scaleY(1);
+  }
+  nav ul.meniu > li:hover > ul {
+    display: block;
+    animation-name: aparitie_meniu;
+    animation-duration: 1s;
+    transform-origin: 50% 0;
+  }
+  @keyframes aparitie_meniu {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 @media screen and (max-width: 1099px) and (min-width: 750px) {
-  ul li span, #line {
+  #line {
     display: none;
+  }
+  /*deschidere submeniu*/
+  nav ul li span {
+    display: none;
+  }
+  nav ul.meniu li .submeniu li {
+    position: relative;
+  }
+  nav ul.meniu li .submeniu li::after, nav ul.meniu li .submeniu li::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to left, white, black);
+    transition: transform 1s;
+    width: 5px;
+    height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  nav ul.meniu li .submeniu li::before {
+    top: 0;
+    left: 0;
+  }
+  nav ul.meniu li .submeniu li::after {
+    bottom: 0;
+    right: 0;
+  }
+  nav ul.meniu li .submeniu li:hover::after, nav ul.meniu li .submeniu li:hover::before {
+    height: 100%;
+    transform: scaleY(1);
+  }
+  nav ul.meniu > li:hover > ul {
+    display: block;
+    animation-name: aparitie_meniu;
+    animation-duration: 1s;
+    transform-origin: 50% 0;
+  }
+  @keyframes aparitie_meniu {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 @media screen and (max-width: 749px) {
-  ul li span {
-    display: none;
+  #container {
+    background-color: var(--culoare-butoane);
+    height: 3rem;
+    position: relative; /* Add this line */
+    z-index: 1; /* Add this line */
+  }
+  #container:hover #nav {
+    display: block;
+    transform-origin: 0% 50%;
+    animation: scale 1s;
   }
   #line {
     animation: appearance 2s;
+    align-items: center;
   }
   @keyframes appearance {
     0% {
@@ -120,15 +205,29 @@ nav ul.meniu > li:hover > ul {
   }
   nav {
     display: none;
+    font-size: 0.8rem;
+    position: absolute; /* Add this line */
+    z-index: 3; /* Add this line */
   }
   nav ul {
-    display: list-item;
+    display: flex;
     flex-direction: column;
+    background-color: var(--culoare-butoane);
   }
-  #container:hover #nav {
+  nav ul.meniu > li {
+    width: 100%;
+  }
+  nav ul.meniu > li:hover > ul {
+    position: absolute; /* Add this line */
+    z-index: 2; /* Add this line */
+    width: 30%;
     display: block;
-    transform-origin: 0% 50%;
-    animation: scale 1s;
+    animation-name: aparitie_meniu;
+    animation-duration: 1s;
+    transform-origin: 50% 0;
+  }
+  nav ul li span {
+    display: none;
   }
   @keyframes scale {
     0% {
@@ -136,6 +235,16 @@ nav ul.meniu > li:hover > ul {
     }
     100% {
       transform: scaleX(1);
+    }
+  }
+  @keyframes aparitie_meniu {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }
